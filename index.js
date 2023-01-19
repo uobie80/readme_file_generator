@@ -40,7 +40,7 @@ function init() {
             {
                       type: 'input',
                       message: questions[0],
-                      name: 'project_title',
+                      name: 'title',
                     },
            {
                       type: 'input',
