@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const create_readme = require('./utils/generateMarkdown.js');
+const readme_markdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -24,10 +24,77 @@ const questions = [
                   ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+
+    const formatted_readme_data = readme_markdown.generateMarkdown(data);
+
+    fs.writeFile(fileName, formatted_readme_data, (err) => err ? console.error(err) : console.log('Commit logged!'));
+
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+    inquirer
+    .prompt([
+            {
+                      type: 'input',
+                      message: questions[0],
+                      name: 'project_title',
+                    },
+           {
+                      type: 'input',
+                      message: questions[1],
+                      name: 'description',
+                    },
+          {
+                      type: 'input',
+                      message: questions[2],
+                      name: 'installation',
+                    },
+          {
+                      type: 'input',
+                      message: questions[3],
+                      name: 'usage'
+  
+                    },
+          {
+                      type: 'input',
+                      message: questions[4],
+                      name: 'credits'
+  
+                    },
+          {
+                      type: 'input',
+                      message: questions[5],
+                      name: 'license'
+  
+                    },
+          {
+                      type: 'input',
+                      message: questions[6],
+                      name: 'features'
+  
+                    },
+          {
+                      type: 'input',
+                      message: questions[7],
+                      name: 'contribute',
+                    },
+          {
+                      type: 'input',
+                      message: questions[8],
+                      name: 'tests',
+                    },
+  
+          ])
+    .then((response) => { 
+            console.log(response);
+            writeToFile('README.md', response);
+    });
+
+
+}
 
 // Function call to initialize app
 init();
