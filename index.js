@@ -1,5 +1,17 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+//const fr = require('./utils.js');
+
+
+format_response = function(answers) {
+
+    formatted_result = "";
+
+
+    return formatted_result
+}
+
+
 
 inquirer
   .prompt([
