@@ -38,7 +38,10 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
 
 
-  return `# ${data.title}\n## Description\n${data.description}\n## Installation\n${data.installation}\n## Usage\n${data.usage}\n## Credits\n${data.credits}\n## License\n${data.license}\n## Features\n ${data.features} \n## Contribute\n${data.contribute} \n## Tests\n${data.tests}`;
+  const toc = 'Table of Contents\n\n- [Description](#Description)\n- [Installation](#Installation)\n- [Usage](#Usage)\n- [License](#License)\n- [Contributing](#Contributing)\n- [Tests](#Tests)\n- [Questions](#Questions)\n\n';
+  const instructions = "";
+
+  return `# ${data.title}\n` + toc + `## Description\n${data.description}\n## Installation\n${data.installation}\n## Usage\n${data.usage}\n## License\n${data.license}\n## Contributing\n${data.contribute} \n## Tests\n${data.tests}\n## Questions ${data.username}\n${data.email}`;
 }
 
 module.exports = generateMarkdown;
