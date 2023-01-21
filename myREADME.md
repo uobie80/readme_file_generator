@@ -1,4 +1,4 @@
-# Project
+# README File Generator
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Table of Contents
@@ -28,5 +28,5 @@ none
 ## Questions
 If you have any questions please reach me using my email below.
 
-Username: uobie  
-Email: uobie@hotmail.com
+Username: uobicheta  
+Email: uobicheta@hotmail.com
